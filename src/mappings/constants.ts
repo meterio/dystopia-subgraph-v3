@@ -25,6 +25,8 @@ export function wethAddress(): Address {
     return Address.fromString(ADDRESS_ZERO); //todo
   } else if (network == 'fuji') {
     return Address.fromString(ADDRESS_ZERO);//todo
+  } else if (network == 'metertest') {
+    return Address.fromString('0xe8876830e7cc85dae8ce31b0802313caf856886f');
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -38,6 +40,8 @@ export function usdcAddress(): Address {
     return Address.fromString(ADDRESS_ZERO); //todo
   } else if (network == 'fuji') {
     return Address.fromString(ADDRESS_ZERO);//todo
+  } else if (network == 'metertest') {
+    return Address.fromString('0x8ae4c669f147737085a23d578c1da94d3e39879f');
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -51,6 +55,8 @@ export function usdcWethPairAddress(): Address {
     return Address.fromString(ADDRESS_ZERO); //todo
   } else if (network == 'fuji') {
     return Address.fromString(ADDRESS_ZERO);//todo
+  } else if (network == 'metertest') {
+    return Address.fromString('0x60982feb18b37c92b49e39e2d4a96917f953f8ab');
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -73,6 +79,15 @@ export function whitelisted(): Address[] {
       Address.fromString('0x580A84C73811E1839F75d86d75d88cCa0c241fF4'), // QI
       Address.fromString('0x255707b70bf90aa112006e1b07b9aea6de021424'), // TETU
     ]
+  } else if (network == 'metertest') {
+    return [
+      wethAddress(),
+      Address.fromString('0xfAC315d105E5A7fe2174B3EB1f95C257A9A5e271'), // WMTR
+      Address.fromString('0xda5f90e416a22f6f65ed586a859c8666ce6ce1d1'), // USDT
+      Address.fromString('0x8ae4c669f147737085a23d578c1da94d3e39879f'), // USDC
+      Address.fromString('0x8a419ef4941355476cf04933e90bf3bbf2f73814'), // MTRG
+      Address.fromString('0xcfd9102a2675e0d898982f1fd1dd0264aaa901da'), // WBTC
+    ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return [Address.fromString(ADDRESS_ZERO)];
@@ -88,6 +103,11 @@ export function stablecoins(): Address[] {
       Address.fromString('0xa3Fa99A148fA48D14Ed51d610c367C61876997F1'), // MAI
       Address.fromString('0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89'), // FRAX
       Address.fromString('0x236eeC6359fb44CCe8f97E99387aa7F8cd5cdE1f'), // USD+
+    ]
+  } else if (network == 'metertest') {
+    return [
+      Address.fromString('0xda5f90e416a22f6f65ed586a859c8666ce6ce1d1'), // USDT
+      Address.fromString('0x8ae4c669f147737085a23d578c1da94d3e39879f'), // USDC
     ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
