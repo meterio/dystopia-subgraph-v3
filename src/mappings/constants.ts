@@ -56,7 +56,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'fuji') {
     return Address.fromString(ADDRESS_ZERO);//todo
   } else if (network == 'metertest') {
-    return Address.fromString('0x60982feb18b37c92b49e39e2d4a96917f953f8ab');
+    return Address.fromString('0x3ce41b35a6362ab8fc90859a77a78216f88cd0e9');
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);

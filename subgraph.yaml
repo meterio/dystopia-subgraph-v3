@@ -6,9 +6,9 @@ dataSources:
     name: Factory
     network: metertest
     source:
-      address: "0x041F86c7cb6F66F7c7263Df96Fee3eEf5c488b00"
+      address: "0x7B5F989c5b707318D83E027485AcBE9A0d512665"
       abi: FactoryAbi
-      startBlock: 18816230
+      startBlock: 18902252
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -34,9 +34,9 @@ dataSources:
     name: Controller
     network: metertest
     source:
-      address: "0xa39aC2B882f250182a4a725793176951a723F9DE"
+      address: "0x8a7411ae9a371c78c678af2bf9446578949e5bfd"
       abi: ControllerAbi
-      startBlock: 18816230
+      startBlock: 19016067
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
