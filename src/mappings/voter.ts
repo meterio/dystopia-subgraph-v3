@@ -23,7 +23,7 @@ import {
   Whitelisted,
   Withdraw
 } from '../types/templates/VoterTemplate/VoterAbi';
-import {Address, BigDecimal, BigInt, log, store} from '@graphprotocol/graph-ts';
+import {Address, BigDecimal, BigInt, ethereum, log, store} from '@graphprotocol/graph-ts';
 import {abs, calculateApr, formatUnits} from './helpers';
 import {VeAbi} from '../types/templates/VoterTemplate/VeAbi';
 import {GaugeAbi} from '../types/templates/VoterTemplate/GaugeAbi';
@@ -112,9 +112,13 @@ export function handleAbstained(event: Abstained): void {
     const voterCtr = VoterAbi.bind(event.address)
     const ve = VeEntity.load(veNft.ve) as VeEntity;
     const minterCtr = MinterAbi.bind(Address.fromString(ve.underlyingMinter));
+    let weeklyEmission = TEMP_WEEKLY_EMISSION
+    if (Address.fromString(ve.underlyingMinter).notEqual(Address.fromString('0x1479f0954df7c667b1817e4eb3c0f4723eb054f5'))) {
+      weeklyEmission = minterCtr.weeklyEmission()
+    }
 
-    const weekly = formatUnits(TEMP_WEEKLY_EMISSION, BigInt.fromI32(18));
-    // const weekly = formatUnits(minterCtr.weeklyEmission(), BigInt.fromI32(18));
+    // const weekly = formatUnits(TEMP_WEEKLY_EMISSION, BigInt.fromI32(18));
+    const weekly = formatUnits(weeklyEmission, BigInt.fromI32(18));
     const totalWeight = formatUnits(voterCtr.totalWeight(), BigInt.fromI32(18));
 
     for (let i = 0; i < veNft.voteIds.length; i++) {
@@ -212,9 +216,13 @@ function fetchAllVotedPools(veNFT: VeNFTEntity, voterAdr: string): void {
     const veCtr = VeAbi.bind(Address.fromString(veNFT.ve))
     const vePower = formatUnits(veCtr.balanceOfNFT(BigInt.fromString(veNFT.id)), BigInt.fromI32(18))
     const minterCtr = MinterAbi.bind(Address.fromString(ve.underlyingMinter));
+    let weeklyEmission = TEMP_WEEKLY_EMISSION
+    if (Address.fromString(ve.underlyingMinter).notEqual(Address.fromString('0x1479f0954df7c667b1817e4eb3c0f4723eb054f5'))) {
+      weeklyEmission = minterCtr.weeklyEmission()
+    }
 
-    // const weekly = formatUnits(minterCtr.weeklyEmission(), BigInt.fromI32(18));
-    const weekly = formatUnits(TEMP_WEEKLY_EMISSION, BigInt.fromI32(18));
+    // const weekly = formatUnits(TEMP_WEEKLY_EMISSION, BigInt.fromI32(18));
+    const weekly = formatUnits(weeklyEmission, BigInt.fromI32(18));
     const totalWeight = formatUnits(voterCtr.totalWeight(), BigInt.fromI32(18));
 
     for (let i = 0; i < 1000; i++) {

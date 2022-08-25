@@ -12,7 +12,7 @@ import {MintableAbi} from '../types/Controller/MintableAbi';
 export function handleSetVeDist(event: SetVeDist): void {
   let veDist = VeDistEntity.load(event.params.value.toHexString());
   const veDistCtr = VeDistAbi.bind(event.params.value);
-  if (!veDist) {
+  // if (!veDist) {
     veDist = new VeDistEntity(event.params.value.toHexString());
     veDist.ve = veDistCtr.votingEscrow().toHexString();
     veDist.rewardToken = veDistCtr.token().toHexString();
@@ -20,7 +20,7 @@ export function handleSetVeDist(event: SetVeDist): void {
     veDist.apr = ZERO_BD
     VeDistTemplate.create(event.params.value);
     veDist.save();
-  }
+  // }
   createVe(veDistCtr.votingEscrow().toHexString());
 }
 
@@ -35,7 +35,7 @@ export function handleSetVoter(event: SetVoter): void {
 
 function createVe(veAdr: string): void {
   let ve = VeEntity.load(veAdr);
-  if (!ve) {
+  // if (!ve) {
     ve = new VeEntity(veAdr);
     const veCtr = VeAbi.bind(Address.fromString(veAdr));
 
@@ -47,5 +47,5 @@ function createVe(veAdr: string): void {
 
     VeTemplate.create(Address.fromString(veAdr));
     ve.save();
-  }
+  // }
 }
