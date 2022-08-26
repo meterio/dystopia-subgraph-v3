@@ -99,7 +99,7 @@ export function handleDetach(event: Detach): void {
 
 export function handleVoted(event: Voted): void {
   const veNft = getVeNFT(event.params.tokenId.toString());
-  fetchAllVotedPools(veNft, event.address.toHex());
+  fetchAllVotedPools(veNft, event.address.toHex(), event.block.number);
 }
 
 export function handleAbstained(event: Abstained): void {
@@ -113,7 +113,7 @@ export function handleAbstained(event: Abstained): void {
     const ve = VeEntity.load(veNft.ve) as VeEntity;
     const minterCtr = MinterAbi.bind(Address.fromString(ve.underlyingMinter));
     let weeklyEmission = TEMP_WEEKLY_EMISSION
-    if (Address.fromString(ve.underlyingMinter).notEqual(Address.fromString('0x1479f0954df7c667b1817e4eb3c0f4723eb054f5'))) {
+    if (event.block.number.ge(BigInt.fromString('19143673'))) {
       weeklyEmission = minterCtr.weeklyEmission()
     }
 
@@ -209,7 +209,7 @@ function getOrCreateVote(voterAdr: string, veId: string, gaugeAdr: string): Vote
 }
 
 // shortcut for fetch voted gauges, event doesn't have info about it
-function fetchAllVotedPools(veNFT: VeNFTEntity, voterAdr: string): void {
+function fetchAllVotedPools(veNFT: VeNFTEntity, voterAdr: string, blockNumber: BigInt): void {
   if (veNFT.voteIds.length == 0) {
     const ve = VeEntity.load(veNFT.ve) as VeEntity;
     const voterCtr = VoterAbi.bind(Address.fromString(voterAdr));
@@ -217,7 +217,7 @@ function fetchAllVotedPools(veNFT: VeNFTEntity, voterAdr: string): void {
     const vePower = formatUnits(veCtr.balanceOfNFT(BigInt.fromString(veNFT.id)), BigInt.fromI32(18))
     const minterCtr = MinterAbi.bind(Address.fromString(ve.underlyingMinter));
     let weeklyEmission = TEMP_WEEKLY_EMISSION
-    if (Address.fromString(ve.underlyingMinter).notEqual(Address.fromString('0x1479f0954df7c667b1817e4eb3c0f4723eb054f5'))) {
+    if (blockNumber.ge(BigInt.fromString('19143673'))) {
       weeklyEmission = minterCtr.weeklyEmission()
     }
 
