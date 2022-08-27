@@ -161,6 +161,26 @@ function getOrCreateGauge(
     if (bribe.reverted) {
       log.critical("BRIBE NOT FOUND, gauge: {}", [gaugeAdr]);
     }
+    // initial reward token
+    const rewardToken0Addr = gaugeCtr.rewardTokens(BigInt.fromI32(0)).toHex();
+    const rewardToken1Addr = gaugeCtr.rewardTokens(BigInt.fromI32(1)).toHex();
+    let rewardToken = GaugeRewardToken.load(gauge.id + rewardToken0Addr);
+    if (!rewardToken) {
+      rewardToken = new GaugeRewardToken(gauge.id + rewardToken0Addr);
+      rewardToken.gauge = gauge.id;
+      rewardToken.token = rewardToken0Addr;
+      rewardToken.save();
+    }
+    rewardToken = GaugeRewardToken.load(gauge.id + rewardToken1Addr);
+    if (!rewardToken) {
+      rewardToken = new GaugeRewardToken(gauge.id + rewardToken1Addr);
+      rewardToken.gauge = gauge.id;
+      rewardToken.token = rewardToken1Addr;
+      rewardToken.save();
+    }
+    // push reward token address to gauge.rewardTokensAddresses
+    const rewardTokens = [rewardToken0Addr, rewardToken1Addr]
+
     gauge.bribe = bribe.value.toHex()
     gauge.pair = gaugeCtr.underlying().toHex()
     gauge.totalSupply = ZERO_BD
@@ -169,7 +189,7 @@ function getOrCreateGauge(
     gauge.expectedAmount = ZERO_BD
     gauge.expectAPR = ZERO_BD
     gauge.totalWeight = ZERO_BD
-    gauge.rewardTokensAddresses = []
+    gauge.rewardTokensAddresses = rewardTokens // initial array include pair token0,token1
     GaugeTemplate.create(Address.fromString(gaugeAdr))
   }
   return gauge;
