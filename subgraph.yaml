@@ -4,14 +4,14 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: metertest
+    network: meter
     source:
-      address: "0x7B5F989c5b707318D83E027485AcBE9A0d512665"
+      address: "0xb33dE8C0843F90655ad6249F20B473a627443d21"
       abi: FactoryAbi
-      startBlock: 18902252
+      startBlock: 27846880
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/factory.ts
       entities:
@@ -32,14 +32,14 @@ dataSources:
 
   - kind: ethereum/contract
     name: Controller
-    network: metertest
+    network: meter
     source:
-      address: "0x8a7411ae9a371c78c678af2bf9446578949e5bfd"
+      address: "0xa8f5b344ef22d5153be70141efd37605b62e97ef"
       abi: ControllerAbi
-      startBlock: 19016067
+      startBlock: 27847044
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/controller.ts
       entities:
@@ -65,12 +65,12 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: PairTemplate
-    network: metertest
+    network: meter
     source:
       abi: PairAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/core.ts
       entities:
@@ -93,12 +93,12 @@ templates:
 
   - kind: ethereum/contract
     name: GaugeTemplate
-    network: metertest
+    network: meter
     source:
       abi: GaugeAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/gauge.ts
       entities:
@@ -120,12 +120,12 @@ templates:
 
   - kind: ethereum/contract
     name: BribeTemplate
-    network: metertest
+    network: meter
     source:
       abi: BribeAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/bribe.ts
       entities:
@@ -147,12 +147,12 @@ templates:
 
   - kind: ethereum/contract
     name: VeTemplate
-    network: metertest
+    network: meter
     source:
       abi: VeAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/ve.ts
       entities:
@@ -170,12 +170,12 @@ templates:
 
   - kind: ethereum/contract
     name: VoterTemplate
-    network: metertest
+    network: meter
     source:
       abi: VoterAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/voter.ts
       entities:
@@ -209,12 +209,12 @@ templates:
 
   - kind: ethereum/contract
     name: VeDistTemplate
-    network: metertest
+    network: meter
     source:
       abi: VeDistAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.1
       language: wasm/assemblyscript
       file: ./src/mappings/ve-dist.ts
       entities:

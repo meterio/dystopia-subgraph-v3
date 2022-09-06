@@ -6,9 +6,9 @@
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ dystopia-exchange/dystopia",
-    "deploy1": "graph deploy meterio/solidly-subgraph --debug --ipfs http://graphtest.meter.io:5001 --node http://graphtest.meter.io:8020 -l v2.0.7",
-    "create-local": "graph create --node http://graphtest.meter.io:8020 meterio/solidly-subgraph",
-    "remove-local": "graph remove --node http://graphtest.meter.io:8020 meterio/solidly-subgraph",
+    "deploy1": "graph deploy meterio/solidly-subgraph --debug --ipfs http://graph.meter.io:5001 --node http://graph.meter.io:8020 -l v0.0.1",
+    "create-local": "graph create --node http://graph.meter.io:8020 meterio/solidly-subgraph",
+    "remove-local": "graph remove --node http://graph.meter.io:8020 meterio/solidly-subgraph",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/solidly-subgraph  -l v0.0.1"
   },
   "dependencies": {
