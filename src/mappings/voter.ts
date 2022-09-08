@@ -29,8 +29,6 @@ import {VeAbi} from '../types/templates/VoterTemplate/VeAbi';
 import {GaugeAbi} from '../types/templates/VoterTemplate/GaugeAbi';
 import {MinterAbi} from '../types/templates/VoterTemplate/MinterAbi';
 
-const TEMP_WEEKLY_EMISSION = BigInt.fromI32(1)
-
 
 export function handleGaugeCreated(event: GaugeCreated): void {
   let gauge = getOrCreateGauge(event.params.gauge.toHexString())
@@ -112,12 +110,7 @@ export function handleAbstained(event: Abstained): void {
     const voterCtr = VoterAbi.bind(event.address)
     const ve = VeEntity.load(veNft.ve) as VeEntity;
     const minterCtr = MinterAbi.bind(Address.fromString(ve.underlyingMinter));
-    let weeklyEmission = TEMP_WEEKLY_EMISSION
-    if (event.block.number.ge(BigInt.fromString('19143673'))) {
-      weeklyEmission = minterCtr.weeklyEmission()
-    }
-
-    // const weekly = formatUnits(TEMP_WEEKLY_EMISSION, BigInt.fromI32(18));
+    let weeklyEmission = minterCtr.weeklyEmission()
     const weekly = formatUnits(weeklyEmission, BigInt.fromI32(18));
     const totalWeight = formatUnits(voterCtr.totalWeight(), BigInt.fromI32(18));
 
@@ -234,12 +227,7 @@ function fetchAllVotedPools(veNFT: VeNFTEntity, voterAdr: string, blockNumber: B
     const veCtr = VeAbi.bind(Address.fromString(veNFT.ve))
     const vePower = formatUnits(veCtr.balanceOfNFT(BigInt.fromString(veNFT.id)), BigInt.fromI32(18))
     const minterCtr = MinterAbi.bind(Address.fromString(ve.underlyingMinter));
-    let weeklyEmission = TEMP_WEEKLY_EMISSION
-    if (blockNumber.ge(BigInt.fromString('19143673'))) {
-      weeklyEmission = minterCtr.weeklyEmission()
-    }
-
-    // const weekly = formatUnits(TEMP_WEEKLY_EMISSION, BigInt.fromI32(18));
+    let weeklyEmission = minterCtr.weeklyEmission()
     const weekly = formatUnits(weeklyEmission, BigInt.fromI32(18));
     const totalWeight = formatUnits(voterCtr.totalWeight(), BigInt.fromI32(18));
 

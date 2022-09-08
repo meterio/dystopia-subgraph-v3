@@ -11,7 +11,7 @@ dataSources:
       startBlock: 27846880
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/factory.ts
       entities:
@@ -34,12 +34,12 @@ dataSources:
     name: Controller
     network: meter
     source:
-      address: "0xa8f5b344ef22d5153be70141efd37605b62e97ef"
+      address: "0xd136037ca4897a0BCA343eE33C2367205910Df42"
       abi: ControllerAbi
-      startBlock: 27847044
+      startBlock: 27877576
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/controller.ts
       entities:
@@ -70,7 +70,7 @@ templates:
       abi: PairAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/core.ts
       entities:
@@ -98,7 +98,7 @@ templates:
       abi: GaugeAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/gauge.ts
       entities:
@@ -125,7 +125,7 @@ templates:
       abi: BribeAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/bribe.ts
       entities:
@@ -152,7 +152,7 @@ templates:
       abi: VeAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/ve.ts
       entities:
@@ -175,7 +175,7 @@ templates:
       abi: VoterAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/voter.ts
       entities:
@@ -214,7 +214,7 @@ templates:
       abi: VeDistAbi
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.1
+      apiVersion: 0.0.5
       language: wasm/assemblyscript
       file: ./src/mappings/ve-dist.ts
       entities:

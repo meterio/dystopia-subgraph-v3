@@ -62,7 +62,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'metertest') {
     return Address.fromString('0xc3177bee6182890a7a5bf367a55545a9697c133a');
   } else if (network == 'meter') {
-    return Address.fromString(ADDRESS_ZERO);  // todo
+    return Address.fromString('0x0416ab25a0555371ff0d23a108f793d6ae4eae98');
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
