@@ -28,7 +28,7 @@ export function wethAddress(): Address {
   } else if (network == 'metertest') {
     return Address.fromString('0x8a419ef4941355476cf04933e90bf3bbf2f73814');
   } else if (network == 'meter') {
-    return Address.fromString('0x24aA189DfAa76c671c279262F94434770F557c35');  // BUSD
+    return Address.fromString('0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3');  // MTRG
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -45,7 +45,7 @@ export function usdcAddress(): Address {
   } else if (network == 'metertest') {
     return Address.fromString('0x8ae4c669f147737085a23d578c1da94d3e39879f');
   } else if (network == 'meter') {
-    return Address.fromString('0xd86e243fc0007e6226b07c9a50c9d70d78299eb5');
+    return Address.fromString('0x24aa189dfaa76c671c279262f94434770f557c35');  //BUSD
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -62,7 +62,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'metertest') {
     return Address.fromString('0xc3177bee6182890a7a5bf367a55545a9697c133a');
   } else if (network == 'meter') {
-    return Address.fromString('0x0416ab25a0555371ff0d23a108f793d6ae4eae98');
+    return Address.fromString('0x4a74c4110726ac162558062250c671b2bdb17c07');  // MTRG/BUSD
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -98,10 +98,10 @@ export function whitelisted(): Address[] {
     return [
       wethAddress(),
       Address.fromString('0x1cf09D1B5Da9d9d24365D87B932A7c4bD018A419'), // AMPL
-      // Address.fromString('0x24aA189DfAa76c671c279262F94434770F557c35'), // BUSD  already in wethAddress()
+      Address.fromString('0x24aA189DfAa76c671c279262F94434770F557c35'), // BUSD
       Address.fromString('0x6CFe9AdaD5215195c1Aa9755DAed29360e6Ab986'), // FTB
       Address.fromString('0xb158870beB809Ad955Bf56065C5C10D7Fd957cC0'), // MOVR
-      Address.fromString('0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3'), // MTRG
+      // Address.fromString('0x228ebBeE999c6a7ad74A6130E81b12f9Fe237Ba3'), // MTRG  already in wethAddress()
       Address.fromString('0xd86e243fc0007e6226b07c9a50c9d70d78299eb5'), // USDC
       Address.fromString('0x5Fa41671c48e3C951AfC30816947126CCC8C162e'), // USDT
       Address.fromString('0x8Df95e66Cb0eF38F91D2776DA3c921768982fBa0'), // VOLT
