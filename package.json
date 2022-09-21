@@ -5,11 +5,14 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ dystopia-exchange/dystopia",
-    "deploy1": "graph deploy meterio/solidly-subgraph --debug --ipfs http://graphtest.meter.io:5001 --node http://graphtest.meter.io:8020 -l v2.0.7",
-    "create-local": "graph create --node http://graphtest.meter.io:8020 meterio/solidly-subgraph",
-    "remove-local": "graph remove --node http://graphtest.meter.io:8020 meterio/solidly-subgraph",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/solidly-subgraph  -l v0.0.1"
+    "deploy-original": "graph deploy --node https://api.thegraph.com/deploy/ dystopia-exchange/dystopia",
+    "deploy": "graph deploy meterio/voltswapv2-subgraph --debug --ipfs http://graphtest.meter.io:5001 --node http://graphtest.meter.io:8020 -l v2.0.7",
+    "create-local": "graph create --node http://graphtest.meter.io:8020 meterio/voltswapv2-subgraph",
+    "remove-local": "graph remove --node http://graphtest.meter.io:8020 meterio/voltswapv2-subgraph",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/voltswapv2-subgraph  -l v0.0.1",
+    "create-voltswap": "graph create --node http://localhost:8020 meterio/voltswapv2-subgraph",
+    "remove-voltswap": "graph remove --node http://localhost:8020 meterio/voltswapv2-subgraph",
+    "deploy-voltswap": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/voltswapv2-subgraph  -l v0.0.1"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.31.0",
