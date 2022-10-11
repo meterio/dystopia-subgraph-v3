@@ -108,6 +108,8 @@ export function whitelisted(): Address[] {
       Address.fromString('0xc1f6C86ABEe8e2e0B6fd5BD80F0b51fef783635C'), // WBTC
       Address.fromString('0xd5e615BB3c761AB4cD9251dEEd78Dac58BE9CcBF'), // TDROP
       Address.fromString('0x75Fd6F7EDCc5E7A8100eAd3D29CCD844153ef0F3'), // TFUEL
+      Address.fromString('0x983147FB73A45FC7F8B4DFA1cd61Bdc7b111e5b6'), // ETH
+      Address.fromString('0xF0E86246519Be0810C9FAfc8430C49799985aAA8'), // BNB
     ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
