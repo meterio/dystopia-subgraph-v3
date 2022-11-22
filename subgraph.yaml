@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: meter
+    network: theta
     source:
-      address: "0xb33dE8C0843F90655ad6249F20B473a627443d21"
+      address: "0x8fe77E212e8e605cB7c02E4e917B5f81fE2d1A78"
       abi: FactoryAbi
-      startBlock: 27846880
+      startBlock: 17988264
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -32,11 +32,11 @@ dataSources:
 
   - kind: ethereum/contract
     name: Controller
-    network: meter
+    network: theta
     source:
-      address: "0xd136037ca4897a0BCA343eE33C2367205910Df42"
+      address: "0xeBC67C9b00970E18E478d3AE0bf55161280A702e"
       abi: ControllerAbi
-      startBlock: 27877576
+      startBlock: 18000334
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -65,7 +65,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: PairTemplate
-    network: meter
+    network: theta
     source:
       abi: PairAbi
     mapping:
@@ -93,7 +93,7 @@ templates:
 
   - kind: ethereum/contract
     name: GaugeTemplate
-    network: meter
+    network: theta
     source:
       abi: GaugeAbi
     mapping:
@@ -120,7 +120,7 @@ templates:
 
   - kind: ethereum/contract
     name: BribeTemplate
-    network: meter
+    network: theta
     source:
       abi: BribeAbi
     mapping:
@@ -147,7 +147,7 @@ templates:
 
   - kind: ethereum/contract
     name: VeTemplate
-    network: meter
+    network: theta
     source:
       abi: VeAbi
     mapping:
@@ -170,7 +170,7 @@ templates:
 
   - kind: ethereum/contract
     name: VoterTemplate
-    network: meter
+    network: theta
     source:
       abi: VoterAbi
     mapping:
@@ -209,7 +209,7 @@ templates:
 
   - kind: ethereum/contract
     name: VeDistTemplate
-    network: meter
+    network: theta
     source:
       abi: VeDistAbi
     mapping:
