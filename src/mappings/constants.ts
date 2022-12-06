@@ -68,7 +68,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'meter') {
     return Address.fromString('0x4a74c4110726ac162558062250c671b2bdb17c07');  // MTRG/BUSD
   } else if (network == 'theta') {
-    return Address.fromString(ADDRESS_ZERO);  //todo
+    return Address.fromString('0x63b3e30ccae3d47a2928530abf98dbae2dc518f2');  // WTFUEL/USDC
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -119,12 +119,14 @@ export function whitelisted(): Address[] {
     ]
   } else if (network == 'theta') {
     return [
-      Address.fromString('0x4Dc08B15ea0e10B96c41Aec22fAB934bA15C983e'), // WTFUEL
+      wethAddress(),
+      // Address.fromString('0x4Dc08B15ea0e10B96c41Aec22fAB934bA15C983e'), // WTFUEL
       Address.fromString('0x1336739b05c7ab8a526d40dcc0d04a826b5f8b03'), // TDROP
       Address.fromString('0xae6f0539e33f624ac685cce9ba57cc1d948d909d'), // TVOLT
       Address.fromString('0x7B37d0787A3424A0810E02b24743a45eBd5530B2'), // BUSD
       Address.fromString('0xBd2949F67DcdC549c6Ebe98696449Fa79D988A9F'), // MTRG
       Address.fromString('0x3Ca3fEFA944753b43c751336A5dF531bDD6598B6'), // USDC
+      Address.fromString('0xaf537fb7e4c77c97403de94ce141b7edb9f7fcf0'), // WTHETA
     ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
