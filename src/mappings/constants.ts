@@ -68,7 +68,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'meter') {
     return Address.fromString('0x4a74c4110726ac162558062250c671b2bdb17c07');  // MTRG/BUSD
   } else if (network == 'theta') {
-    return Address.fromString('0x63b3e30ccae3d47a2928530abf98dbae2dc518f2');  // WTFUEL/USDC
+    return Address.fromString('0x244b3020b982a17b665b1181af591a05cc8b7833');  // WTFUEL/BUSD
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
