@@ -49,7 +49,7 @@ export function usdcAddress(): Address {
   } else if (network == 'meter') {
     return Address.fromString('0x24aa189dfaa76c671c279262f94434770f557c35');  //BUSD
   } else if (network == 'theta') {
-    return Address.fromString('0x3Ca3fEFA944753b43c751336A5dF531bDD6598B6');  //USDC
+    return Address.fromString('0x7b37d0787a3424a0810e02b24743a45ebd5530b2');  //BUSD
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
