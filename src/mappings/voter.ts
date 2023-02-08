@@ -48,13 +48,19 @@ export function handleGaugeCreated(event: GaugeCreated): void {
 
   let pair = Pair.load(event.params.pool.toHexString()) as Pair;
 
-  pair.gauge = gauge.id
-  pair.gaugebribes = bribe.id
+  if (pair) {
+    pair.gauge = gauge.id
+    pair.gaugebribes = bribe.id
+
+    pair.save()
+  } else {
+    log.critical("null pair", [event.params.pool.toHexString()])
+  }
+
   gauge.bribe = bribe.id
 
   // save updated values
   gauge.save()
-  pair.save()
 }
 
 export function handleWhitelisted(event: Whitelisted): void {
