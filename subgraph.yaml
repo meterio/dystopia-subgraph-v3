@@ -34,9 +34,9 @@ dataSources:
     name: Controller
     network: metertest
     source:
-      address: "0x8a7411ae9a371c78c678af2bf9446578949e5bfd"
+      address: "0x0759678Ea34180dAfF232cD0C15A53B17B2D824a"
       abi: ControllerAbi
-      startBlock: 19016067
+      startBlock: 29152421
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5

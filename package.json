@@ -6,7 +6,7 @@
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
     "deploy-original": "graph deploy --node https://api.thegraph.com/deploy/ dystopia-exchange/dystopia",
-    "deploy": "graph deploy meterio/voltswapv2-subgraph --debug --ipfs http://graphtest.meter.io:5001 --node http://graphtest.meter.io:8020 -l v2.0.7",
+    "deploy": "graph deploy meterio/voltswapv2-subgraph --debug --ipfs http://graphtest.meter.io:5001 --node http://graphtest.meter.io:8020 -l v0.0.1",
     "create-local": "graph create --node http://graphtest.meter.io:8020 meterio/voltswapv2-subgraph",
     "remove-local": "graph remove --node http://graphtest.meter.io:8020 meterio/voltswapv2-subgraph",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/voltswapv2-subgraph  -l v0.0.1",

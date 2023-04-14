@@ -87,6 +87,7 @@ export function whitelisted(): Address[] {
       Address.fromString('0x8ae4c669f147737085a23d578c1da94d3e39879f'), // USDC
       Address.fromString('0x8a419ef4941355476cf04933e90bf3bbf2f73814'), // MTRG
       Address.fromString('0xcfd9102a2675e0d898982f1fd1dd0264aaa901da'), // WBTC
+      Address.fromString('0x8eb76752dd045f8d135bccf966e252fed2a90fd3'), // MEN
     ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
