@@ -12,7 +12,7 @@
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/voltswapv2-subgraph  -l v0.0.1",
     "create-voltswap": "graph create --node http://localhost:8020 meterio/voltswapv2-subgraph",
     "remove-voltswap": "graph remove --node http://localhost:8020 meterio/voltswapv2-subgraph",
-    "deploy-voltswap": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/voltswapv2-subgraph  -l v0.0.1"
+    "deploy-voltswap": "graph deploy --node http://localhost:8020/ --ipfs http://ipfs.voltswap.finance:5001 meterio/voltswapv2-subgraph  -l v0.0.1"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.31.0",
