@@ -68,7 +68,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'meter') {
     return Address.fromString('0x4a74c4110726ac162558062250c671b2bdb17c07');  // MTRG/BUSD
   } else if (network == 'base') {
-    return Address.fromString('0xa023E6f6B4862EA38cbe45e377abD908abAb2f82');  // USDC/WETH
+    return Address.fromString('0xc61272050032d42fabd2f36c5e5ebf397c1a4684');  // USDC/WETH
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
