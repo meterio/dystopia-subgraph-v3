@@ -68,7 +68,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'meter') {
     return Address.fromString('0x4a74c4110726ac162558062250c671b2bdb17c07');  // MTRG/BUSD
   } else if (network == 'base') {
-    return Address.fromString(ADDRESS_ZERO);  // USDC/WETH
+    return Address.fromString('0xa023E6f6B4862EA38cbe45e377abD908abAb2f82');  // USDC/WETH
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -120,7 +120,7 @@ export function whitelisted(): Address[] {
   } else if (network == 'base') {
     return [
       wethAddress(),
-      Address.fromString('0xBd2949F67DcdC549c6Ebe98696449Fa79D988A9F'), // MTRG
+      Address.fromString('0xa023E6f6B4862EA38cbe45e377abD908abAb2f82'), // eMTRG
       Address.fromString('0x863656e346d8A42EC7caAAd606611b6fD8916f32'), // BOLT
       Address.fromString('0xEB466342C4d449BC9f53A865D5Cb90586f405215'), // USDC
     ]
