@@ -122,7 +122,8 @@ export function whitelisted(): Address[] {
       wethAddress(),
       Address.fromString('0xa023E6f6B4862EA38cbe45e377abD908abAb2f82'), // eMTRG
       Address.fromString('0x863656e346d8A42EC7caAAd606611b6fD8916f32'), // BOLT
-      Address.fromString('0xEB466342C4d449BC9f53A865D5Cb90586f405215'), // USDC
+      Address.fromString('0xEB466342C4d449BC9f53A865D5Cb90586f405215'), // axlUSDC
+      Address.fromString('0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22'), // cbETH
     ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
