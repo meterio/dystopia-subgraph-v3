@@ -113,6 +113,7 @@ export function whitelisted(): Address[] {
       Address.fromString('0x160361ce13ec33c993b5cca8f62b6864943eb083'), // WMTR
       Address.fromString('0x8bf591eae535f93a242d5a954d3cde648b48a5a8'), // suUSD
       Address.fromString('0x1c22531AA9747d76fFF8F0A43b37954ca67d28e0'), // suETH
+      Address.fromString('0xe85411C030fB32A9D8b14Bbbc6CB19417391F711'), // suBTC
     ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
