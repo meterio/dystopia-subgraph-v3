@@ -45,7 +45,7 @@ export function usdcAddress(): Address {
   } else if (network == 'metertest') {
     return Address.fromString('0x8ae4c669f147737085a23d578c1da94d3e39879f');
   } else if (network == 'meter') {
-    return Address.fromString('0x24aa189dfaa76c671c279262f94434770f557c35');  //BUSD
+    return Address.fromString('0x5Fa41671c48e3C951AfC30816947126CCC8C162e');  // USDT
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -62,7 +62,7 @@ export function usdcWethPairAddress(): Address {
   } else if (network == 'metertest') {
     return Address.fromString('0xc3177bee6182890a7a5bf367a55545a9697c133a');
   } else if (network == 'meter') {
-    return Address.fromString('0x4a74c4110726ac162558062250c671b2bdb17c07');  // MTRG/BUSD
+    return Address.fromString('0x609d49d84f8ec3836721daa061ff6bf5e181e39c');  // MTRG-USDT
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
@@ -140,6 +140,7 @@ export function stablecoins(): Address[] {
     return [
       Address.fromString('0x5Fa41671c48e3C951AfC30816947126CCC8C162e'), // USDT
       Address.fromString('0xd86e243fc0007e6226b07c9a50c9d70d78299eb5'), // USDC
+      Address.fromString('0x8bf591eae535f93a242d5a954d3cde648b48a5a8'), // suUSD
     ]
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
