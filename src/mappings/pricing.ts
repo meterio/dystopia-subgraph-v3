@@ -63,7 +63,25 @@ export function findEthPerToken(token: Token): BigDecimal {
   } else
     // other stablecoins fetch price ONLY with xxx-USDC
   if (isOnStablecoinList(token.id)) {
-    wl = [usdcAddress()]
+    
+    const pairMapStable = PairMap.load(generatePairMapID(token.id, usdcAddress().toHex(), true));
+    if (!!pairMapStable) {
+      wl = [usdcAddress()]
+    } else {
+      // @ts-ignore
+      for (let i = 0; i < stablecoins().length; i++) {
+        // @ts-ignore
+        const _token = stablecoins()[i]
+        // @ts-ignore
+        if (Address.fromString(token.id).notEqual(_token)) {
+          const pairMapStable = PairMap.load(generatePairMapID(token.id, _token.toHex(), true));
+          if (!!pairMapStable) {
+            wl = [_token]
+            break
+          }
+        }
+      }
+    }
   }
 
   let bestPrice = ZERO_BD
