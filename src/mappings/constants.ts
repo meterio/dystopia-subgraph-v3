@@ -45,7 +45,7 @@ export function usdcAddress(): Address {
   } else if (network == 'metertest') {
     return Address.fromString('0x8ae4c669f147737085a23d578c1da94d3e39879f');
   } else if (network == 'meter') {
-    return Address.fromString('0x5Fa41671c48e3C951AfC30816947126CCC8C162e');  // USDT
+    return Address.fromString('0xd86e243fc0007e6226b07c9a50c9d70d78299eb5');  // USDC
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
