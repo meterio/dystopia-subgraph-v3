@@ -63,7 +63,7 @@ export function usdcWethPairAddress(): Address {
     return Address.fromString('0xc3177bee6182890a7a5bf367a55545a9697c133a');
   } else if (network == 'meter') {
     // return Address.fromString('0x609d49d84f8ec3836721daa061ff6bf5e181e39c');  // MTRG-USDT
-    return Address.fromString('0x6bff2fd2554ad25e662dd6d7c902115e6b76f046');  // MTRG-USDC
+    return Address.fromString('0xe59b0fd9b4d3e449f6e4b76a0872eaac041042b6');  // MTRG-USDC
   } else {
     log.critical("UNKNOWN NETWORK {}", [network])
     return Address.fromString(ADDRESS_ZERO);
