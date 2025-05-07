@@ -10,18 +10,18 @@
     "create-local": "graph create --node http://graph.meter.io:8020 meterio/voltswapv2-subgraph",
     "remove-local": "graph remove --node http://graph.meter.io:8020 meterio/voltswapv2-subgraph",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 meterio/voltswapv2-subgraph  -l v0.0.1",
-    "create-voltswap": "graph create --node http://localhost:8020 meterio/voltswapv2-subgraph",
-    "remove-voltswap": "graph remove --node http://localhost:8020 meterio/voltswapv2-subgraph",
-    "deploy-voltswap": "graph deploy --node http://localhost:8020/ --ipfs http://ipfs.voltswap.finance:5001 meterio/voltswapv2-subgraph  -l v0.0.1"
+    "create-voltswap": "graph create --node http://graph-meter.voltswap.finance:8020 meterio/voltswapv2-subgraph",
+    "remove-voltswap": "graph remove --node http://graph-meter.voltswap.finance:8020 meterio/voltswapv2-subgraph",
+    "deploy-voltswap": "graph deploy --node http://graph-meter.voltswap.finance:8020/ --ipfs 127.0.0.1:5001 meterio/voltswapv2-subgraph  -l v0.0.1"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.31.0",
-    "@graphprotocol/graph-ts": "0.27.0",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "^8.18.0",
-    "eslint-config-prettier": "^8.5.0",
-    "matchstick-as": "^0.5.0",
-    "typescript": "^4.7.2"
+    "@graphprotocol/graph-cli": "0.71.0",
+    "@graphprotocol/graph-ts": "0.35.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^9.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "matchstick-as": "^0.6.0",
+    "typescript": "^5.4.2"
   }
 }
